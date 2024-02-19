@@ -21,6 +21,9 @@ app.use('/api/clients', clientRoutes)
 const loanRoutes=require('./routes/loanRoutes')
 app.use('/api/loans', loanRoutes)
 
+const amortizationRoutes=require('./routes/amortizationRoutes')
+app.use('/api/amortization', amortizationRoutes)
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });
