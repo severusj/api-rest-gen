@@ -8,5 +8,5 @@ const loanSchema=new mongoose.Schema({
     register_date: String
 })
 
-const Client=mongoose.model('Loan', loanSchema)
-module.exports=Client
+const Loan=mongoose.model('Loan', loanSchema)
+module.exports=Loan
