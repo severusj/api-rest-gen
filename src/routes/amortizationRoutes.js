@@ -7,14 +7,12 @@ router.post('/', async (req, res) => {
     try {
         const { client_code } = req.body;
 
-        // Buscar el préstamo por su código
         const loan = await Loan.findOne({ client_code });
 
         if (!loan) {
             return res.status(404).json({ message: 'Préstamo no encontrado' });
         }
 
-        // Calcular el monto de cada cuota
         const quota_amount = (loan.amount / loan.quotas_quantity) * 0.3;
 
         // Calcular las fechas de pago para cada cuota
