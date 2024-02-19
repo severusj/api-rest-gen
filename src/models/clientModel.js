@@ -7,7 +7,7 @@ const clientSchema=new mongoose.Schema({
     address: String,
     phone_number: Number,
     marital_status: String,
-    register_date: Date
+    register_date: String
 })
 
 const Client=mongoose.model('Client', clientSchema)
