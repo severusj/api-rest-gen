@@ -13,8 +13,13 @@ mongoose.connect('mongodb://localhost:27017/mantenimiento-clientes').then(()=>{
 
 app.use(express.json())
 
+//Cliente
 const clientRoutes=require('./routes/clientRoutes')
 app.use('/api/clients', clientRoutes)
+
+//Prestamos
+const loanRoutes=require('./routes/loanRoutes')
+app.use('/api/loans', loanRoutes)
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

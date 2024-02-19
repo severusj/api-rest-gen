@@ -25,4 +25,15 @@ router.get('/', async(req, res)=>{
     }
 })
 
+//PUT para actualizar cliente
+router.put('/:id', async(req, res)=>{
+    try{
+       const {id}=req.params
+       const {dpi, name,birthday,address,phone_number,marital_status,register_date}=req.body
+       const updatedClient= await Client.findByIdAndUpdate(id,{dpi, name,birthday,address,phone_number,marital_status,register_date}, {new: true})
+       res.json(updatedClient)
+    }catch(error){
+        res.status(500).json({message: error.message})
+    }
+})
 module.exports=router
